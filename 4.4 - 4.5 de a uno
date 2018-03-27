@@ -1,0 +1,119 @@
+Proceso calculador_de_sueldo
+	emplnumero<-0;
+	Escribir "calculador de sueldo";
+	escribir "ingrese el numero de empleados de la empresa que desea evaluar";
+	leer empleados;
+	Mientras emplnumero<empleados Hacer
+		
+		
+		emplnumero<- emplnumero+1;
+		
+		Limpiar Pantalla;
+		
+		
+		Repetir
+			Escribir "ingrese el grado de sueldo base del empleado n°", emplnumero, ".";
+		    Escribir "grado de sueldo:";
+		    Escribir "1. $450.000";
+		    Escribir "2. $550.000";
+		    Escribir "3. $700.000";
+		    
+			Leer gradosueldo;
+			
+			Segun gradosueldo Hacer
+			1:
+				sueldo<-450000;
+			2:
+				sueldo<-550000;
+			3:
+				sueldo<-700000;
+			De Otro Modo:
+				Escribir "ERROR: opcion no valida";
+		    FinSegun
+		Hasta Que gradosueldo=1 o gradosueldo=2 o gradosueldo=3;
+		
+		Limpiar Pantalla;
+		
+		Repetir
+			Escribir "ingrese cantidad de horas semanales del empleado n°", emplnumero, ".";
+		leer horas;
+		Hasta Que horas>=0 y horas<50
+		
+		hextras<-(horas-40);
+		si hextras>=1 y hextras<=3 entonces
+			pagohe<-2000;
+		SiNo
+			si hextras>=4 y hextras<=7 Entonces
+				pagohe<-3000;
+			SiNo
+				si hextras>7 Entonces
+					pagohe<-3500;
+				SiNo
+					pagohe<-0;
+				FinSi
+			FinSi
+		FinSi		
+		
+		Limpiar Pantalla;
+		
+		Repetir
+			Escribir "ingrese a que isapre pertenese el empleado n°", emplnumero, ".";
+			Escribir "isapre:";
+			Escribir "1. colmena";
+			Escribir "2. ban médica";
+			Escribir "3. vida 3";
+			Escribir "4. fonasa";
+			leer isapre;
+			Segun isapre hacer
+				1:
+					descuento1<- 6.5;
+				2:
+					descuento1<- 7.3;
+				3:
+					descuento1<- 7;
+				4:
+					descuento1<- 7;
+				De Otro Modo:
+					Escribir "ERROR: opcion no valida";
+			FinSegun
+		Hasta Que isapre=1 o isapre=2 o isapre=3 o isapre=4;
+		
+		limpiar pantalla;
+		
+		Repetir
+			Escribir "ingrese afp a la cual pertenese el empleado n°", emplnumero, ".";
+			Escribir "afp:";
+			Escribir "1. BanSander";
+			Escribir "2. Geometrica SA";
+			Escribir "3. cumprum";
+			Escribir "4. Provida";
+			leer afp;
+			Segun afp hacer
+				1:
+					descuento2<- 12;
+				2:
+					descuento2<- 13.4;
+				3:
+					descuento2<- 12.3;
+				4:
+					descuento2<- 12.9;
+				De Otro Modo:
+					Escribir "ERROR: opcion no valida";
+			FinSegun
+		Hasta Que afp=1 o afp=2 o afp=3 o afp=4;
+		
+		Limpiar Pantalla;
+		
+		
+		T<-sueldo+pagohe;
+		TT<-t-sueldo*[(descuento1/100)+(descuento2/100)];
+		
+		
+		escribir "el sueldo de su empleados n°", emplnumero, "sera:";
+		Escribir "$", tt;
+		
+	Esperar Tecla;
+	FinMientras
+	
+	
+FinProceso

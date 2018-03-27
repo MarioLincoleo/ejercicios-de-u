@@ -1,0 +1,86 @@
+Proceso puntos
+	
+	comprasconpuntos<-0;
+	puntostotales<- 0;
+	puntoscompra<- 0;
+	
+	Repetir
+		
+		Limpiar Pantalla;
+		
+		Escribir "ingrese codigo de la compra";
+		
+		repetir
+		   Escribir "codigo debe ser entre 100 y 300";
+		   leer codigo;
+	    Hasta Que codigo>= 100 y codigo<300
+	   
+		Escribir "ingrese valor de la compra";
+		leer precio;
+		
+		si codigo>= 100 y codigo<200 entonces
+			
+			si precio >=10000 Entonces
+				puntoscompra<- trunc(precio/100);
+			SiNo
+				puntoscompra<- trunc(precio/50);
+			FinSi
+			
+		SiNo
+			
+			si precio >=10000 Entonces
+				puntoscompra<- trunc(precio/50);
+			SiNo
+				puntoscompra<- trunc(precio/30);
+			FinSi
+			
+		FinSi
+		
+		si puntostotales>puntoscompra Entonces
+			
+			Escribir "actualmente cuenta con ", puntostotales, " puntos";
+			Escribir "y el producto cuesta ", puntoscompra, " puntos.";
+			Repetir
+				Escribir "¿desea cancelar con puntos esta compra?";
+				Escribir "1 = si";
+				Escribir "2 = no";
+				Leer awnser;
+			Hasta Que awnser=1 o awnser=2
+			
+			
+			si awnser=1 Entonces
+				
+				puntostotales<- puntostotales-puntoscompra;
+				comprasconpuntos<- comprasconpuntos + 1;
+				
+			FinSi
+			
+		SiNo
+			
+			puntostotales<- puntostotales+ puntoscompra;
+			Escribir "su compra de $", precio, " acumula ", puntoscompra, " puntos";
+			Escribir "precione una tecla para continuar";
+			esperar Tecla;
+			
+		FinSi
+		
+		
+		Limpiar Pantalla;
+		
+		Escribir "sus puntos actuales ahora es de ", puntostotales, " puntos";
+		Escribir "hasta hoy ha realizado ", comprasconpuntos, " compras con puntos";
+		
+		Escribir "---------------------------------";		
+		repetir
+			
+			Escribir "¿desea hacer otra compra?";
+			Escribir "1 = si";
+			escribir "2 = no";
+			Leer salir;
+			
+		Hasta Que salir=1 o salir=2
+		
+		
+	Hasta Que salir=2
+	
+FinProceso
